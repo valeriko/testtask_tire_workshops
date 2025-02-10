@@ -29,22 +29,3 @@ app.include_router(workshop_routes.router, prefix="/api/workshops", tags=["Works
 @app.get("/", include_in_schema=False)
 async def redirect_to_docs():
     return RedirectResponse(url="/docs")
-
-
-@app.middleware("http")
-async def exceptions_middleware(request: Request, call_next):
-    """ HTTP middleware to catch and handle exceptions, returning detailed error responses. """
-    try:
-        response = await call_next(request)
-        return response
-    except Exception as exc:
-        # Log the full traceback
-        error_trace = traceback.format_exc()
-        print(error_trace)
-        return JSONResponse(
-            status_code=500,
-            content={
-                "error": str(exc),
-                "traceback": error_trace
-            }
-        )
