@@ -1,0 +1,11 @@
+fastapi
+httpx
+pydantic
+uvicorn
+sqlalchemy
+python-dateutil
+python-multipart
+lxml
+pytest
+pytest-asyncio
+pytest-mock

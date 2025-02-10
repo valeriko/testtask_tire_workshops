@@ -1,0 +1,32 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: tire_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/backend
+    extra_hosts:
+      - "myhost:host-gateway"
+    networks:
+      - tire_app_network
+
+  frontend:
+    build: ./frontend
+    container_name: tire_frontend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app  # Mount the entire frontend directory
+      - /app/node_modules  # Create a volume for node_modules to prevent overwriting
+    environment:
+      - VITE_APP_BACKEND_URL=http://localhost:8000
+      - CHOKIDAR_USEPOLLING=true  # Ensure file watching works
+    command: yarn dev --host 0.0.0.0
+    networks:
+      - tire_app_network
+
+networks:
+  tire_app_network:
+    driver: bridge

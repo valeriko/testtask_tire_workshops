@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+disable=c-extension-no-member,too-few-public-methods,missing-class-docstring,import-error,missing-module-docstring
+
+[FORMAT]
+max-line-length=200
