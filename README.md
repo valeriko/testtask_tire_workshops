@@ -12,7 +12,7 @@ The application features:
 - Configuring listed tire workshops via a user-friendly web interface.
 
 
-## How to Run
+## How to run
 
 
 Start the application using Docker Compose:
@@ -31,14 +31,14 @@ pytest -v
 ```
 
 
-## Planned Improvements
+## Planned improvements
 
-### High Priority
+### High priority
 
 1. Add **authentication** to secure access to the configuration page.
 2. Implement smarter **phone number validation**.
 
-### Low Priority
+### Low priority
 
 1. Use a **date range picker** instead of two separate date inputs.
 2. Add a **country code selector** for the phone number field.
