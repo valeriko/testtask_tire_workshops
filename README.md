@@ -1,5 +1,6 @@
 # Aggregator of tire change workshops
 
+
 ## About
 
 This is a demo application created as part of a test task using **FastAPI** and **VueJS**.
@@ -10,7 +11,6 @@ The application features:
 - Booking available time slots.
 - Configuring listed tire workshops via a user-friendly web interface.
 
----
 
 ## How to Run
 
@@ -30,11 +30,8 @@ To run the tests:
 pytest -v
 ```
 
----
-
 
 ## Planned Improvements
-
 
 ### High Priority
 
