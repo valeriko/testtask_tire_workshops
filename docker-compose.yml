@@ -8,7 +8,7 @@ services:
     volumes:
       - ./backend:/backend
     extra_hosts:
-      - "myhost:host-gateway"
+      - "myhost:host-gateway"  # Accessing the host from container
     networks:
       - tire_app_network
 
@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./frontend:/app  # Mount the entire frontend directory
+      - ./frontend:/app
       - /app/node_modules  # Create a volume for node_modules to prevent overwriting
     environment:
       - VITE_APP_BACKEND_URL=http://localhost:8000
