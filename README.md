@@ -27,7 +27,7 @@ Once started, the application will be accessible at the following URLs:
 
 To run the tests:
 ```bash
-pytest -v
+docker exec -it tire_backend bash -c "pytest -v"
 ```
 
 
